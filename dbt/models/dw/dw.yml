@@ -1,0 +1,9 @@
+version: 2
+
+models:
+
+      - name: dw_dim_tickers
+        description: This model ingests staging data from the tickers_snapshot model.
+
+      - name: dw_fact_prices
+        description: This model incrementally ingest staging data from stg_sk_prices model.

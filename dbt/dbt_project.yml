@@ -35,13 +35,17 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   pea_tracker: #same as line 5
     loaded_at_field: loaded_at
-    marts:
-      schema: mart
-      materialized: table
     stg:
       schema: stg
       materialized: view
-
+    marts:
+      schema: mart
+      materialized: table
+    dw:
+      schema: dw
+      materialized: incremental
+      unique_key:
+      on_sche      
 snapshots:
   pea_tracker:
     target_schema: snapshots
