@@ -7,8 +7,8 @@ services:
 #     - $AIRFLOW_HOME:/opt/airflow
       - AIRFLOW__CORE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgresql/airflow
     ports:
-      - '8080:8080'
-      - '8001:8001'               #for dbt docs
+      - '8080:8080' # for airflow web ui
+      - '8001:8001' # for dbt docs
     volumes:
       - ./dbt:/my_app/dbt
       - ./extract_load_scripts:/my_app/extract_load_scripts

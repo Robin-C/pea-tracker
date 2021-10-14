@@ -10,7 +10,7 @@ my_dag_id = "dbt"
 default_args = {
     'owner': 'airflow',
     'depends_on_past': False,
-    'retries': 0,
+    'retries': 3,
     'concurrency': 1
 }
 
@@ -20,8 +20,8 @@ dag = DAG(
     dag_id=my_dag_id,
     default_args=default_args,
     start_date=datetime(2021, 10, 5),
-    catchup=False
-    #schedule_interval=timedelta(seconds=5)
+    catchup=False,
+    schedule_interval= '0 0 * * *' # every day at midnight
 )
 
 
