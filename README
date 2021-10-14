@@ -1,0 +1,5 @@
+To run:
+
+Install docker & docker-compose and run "docker-compose up".
+
+Open bash into the container and run "airflow webserver" & "airflow scheduler"

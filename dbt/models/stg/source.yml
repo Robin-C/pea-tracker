@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: sources #dataset aka schema
+    description: raw csv files
+
+  
+    tables:
+      - name: prices
+        description: list of prices per ticker per day
+      - name: tickers
+        description: list of tickers

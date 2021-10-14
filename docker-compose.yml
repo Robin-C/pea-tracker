@@ -1,0 +1,28 @@
+version: '2'
+
+services:
+  dbt_airflow:
+    image: dbt_airflow
+    environment:
+#     - $AIRFLOW_HOME:/opt/airflow
+      - AIRFLOW__CORE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgresql/airflow
+    ports:
+      - '8080:8080'
+    volumes:
+      - ./dbt:/my_app/dbt
+      - ./extract_load_scripts:/my_app/extract_load_scripts
+      - /root/.dbt/:/root/.dbt/
+      - ./airflow/dags:/root/airflow/dags
+      - ./dbt_airflow_on_startup.sh:/dbt_airflow_on_startup.sh
+    command: /bin/bash /dbt_airflow_on_startup.sh
+    depends_on:
+      - postgres
+
+  postgres:
+    user: postgres
+    image: postgres 
+    environment:
+        - POSTGRES_DB=airflow
+        - POSTGRES_USER=airflow
+        - POSTGRES_PASSWORD=airflow
+    hostname: postgresql
