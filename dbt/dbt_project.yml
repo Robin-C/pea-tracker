@@ -43,9 +43,11 @@ models:
       materialized: table
     dw:
       schema: dw
-      materialized: incremental
-      unique_key:
-      on_sche      
+      materialized: table
+      dw_fact_prices:
+        materialized: incremental
+        unique_key: pk
+        on_schema_change: sync_all_columns    
 snapshots:
   pea_tracker:
     target_schema: snapshots
