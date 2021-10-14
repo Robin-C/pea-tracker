@@ -45,7 +45,6 @@ df['loaded_at'] = datetime.now()
 # save to csv
 df.to_csv('prices.csv')
 
-
 #read file
 df=pd.read_csv(r'prices.csv', parse_dates=['Date', 'loaded_at'])
 
