@@ -12,7 +12,6 @@ deactivate
 apt-get update && apt-get install -y procps
 
 # create user for airflow web ui
-airflow db init
 airflow users create -u admin -p admin -r Admin -e email@email.com -f Robin -l CHESNE
 
 # start webserver
