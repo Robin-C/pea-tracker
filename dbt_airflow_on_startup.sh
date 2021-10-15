@@ -8,7 +8,8 @@ pip install --upgrade pip
 pip install -r requirements.txt
 deactivate
 
-
+# install ps
+apt-get update && apt-get install -y procps
 
 # create user for airflow web ui
 airflow db init
