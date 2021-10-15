@@ -6,6 +6,7 @@ services:
     environment:
       - AIRFLOW__CORE__LOAD_EXAMPLES=false
       - AIRFLOW__CORE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgresql/airflow
+      - AIRFLOW__CORE__EXECUTOR=LocalExecutor
     ports:
       - '8080:8080' # for airflow web ui
       - '8001:8001' # for dbt docs

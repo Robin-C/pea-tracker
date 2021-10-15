@@ -11,6 +11,8 @@ deactivate
 # install ps
 apt-get update && apt-get install -y procps
 
+airflow db init
+
 # create user for airflow web ui
 airflow users create -u admin -p admin -r Admin -e email@email.com -f Robin -l CHESNE
 

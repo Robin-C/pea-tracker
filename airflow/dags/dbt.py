@@ -16,7 +16,7 @@ default_args = {
     'depends_on_past': False,
     'retries': 3,
     'concurrency': 1,
-    'start_date':datetime(2021, 10, 5, tzinfo=local_tz)
+    'start_date':datetime(2021, 10, 10, tzinfo=local_tz)
 }
 
 # dag declaration
