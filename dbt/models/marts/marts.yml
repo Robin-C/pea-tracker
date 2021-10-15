@@ -7,3 +7,6 @@ models:
 
       - name: mart_fact_prices
         description: This model serves the prices fact table to end users.
+
+      - name: mart_fact_transactions
+        description: This model serves the transactions fact table to end users.  
