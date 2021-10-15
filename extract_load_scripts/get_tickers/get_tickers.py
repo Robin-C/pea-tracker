@@ -28,13 +28,10 @@ dataset_ref = client.dataset('sources')
 #specify bigquery table
 table_ref = dataset_ref.table('tickers')
 
-#instantiate bq client
-bqclient = bigquery.Client()
-
 #delete table
 query_str = """delete from sources.tickers where true"""
 ticker_array = (
-    bqclient.query(query_str)
+    client.query(query_str)
 )
 
 #send it to bigquery
