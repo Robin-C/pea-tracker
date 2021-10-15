@@ -5,11 +5,8 @@ os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "/root/.dbt/pea-tracker-5b072ff47
 import sys
 from datetime import datetime
 
-
-
-
 #read file
-df=pd.read_csv('/my_app/extract_load_scripts/get_transactions/input/transactions.csv')
+df=pd.read_csv('/my_app/extract_load_scripts/get_transactions/input/transactions.csv', parse_dates=['date_transaction'])
 
 # CSV to be filled manually: 
 #    tickers,date_transaction,quantity,price
