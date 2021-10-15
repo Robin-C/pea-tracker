@@ -20,4 +20,7 @@ airflow users create -u admin -p admin -r Admin -e email@email.com -f Robin -l C
 airflow webserver &
 
 # and the scheduler
-airflow scheduler
+airflow scheduler &
+
+# build docs & serve it on port 8001
+cd /my_app/dbt && dbt docs generate && dbt docs serve --port 8001

@@ -21,7 +21,7 @@ dag = DAG(
     default_args=default_args,
     start_date=datetime(2021, 10, 5),
     catchup=False,
-    schedule_interval='30 * * * *' # every 30 minutes
+    schedule_interval='*/30 * * * *' # every 30 minutes
 )
 
 
