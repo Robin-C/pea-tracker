@@ -5,7 +5,7 @@ services:
     image: dbt_airflow
     environment:
       - AIRFLOW__CORE__LOAD_EXAMPLES=false
-      - AIRFLOW__CORE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgresql/airflow
+      - AIRFLOW__CORE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgresqlairflow/airflow
       - AIRFLOW__CORE__EXECUTOR=LocalExecutor
     ports:
       - '8080:8080' # for airflow web ui
@@ -18,13 +18,41 @@ services:
       - ./dbt_airflow_on_startup.sh:/dbt_airflow_on_startup.sh
     command: /bin/bash /dbt_airflow_on_startup.sh
     depends_on:
-      - postgres
+      - postgres_airflow
 
-  postgres:
+  postgres_airflow:
     user: postgres
     image: postgres 
     environment:
         - POSTGRES_DB=airflow
         - POSTGRES_USER=airflow
         - POSTGRES_PASSWORD=airflow
-    hostname: postgresql
+    hostname: postgresqlairflow
+
+  postgres_metabase:
+    image: postgres 
+    environment:
+        - POSTGRES_DB=metabase
+        - POSTGRES_USER=metabase
+        - POSTGRES_PASSWORD=metabase
+    hostname: postgresqlmetabase
+    command: -p 5433
+
+  metabase:
+    image: metabase/metabase
+    environment:
+      - MB_DB_TYPE=postgres
+      - MB_DB_DBNAME=metabase
+      - MB_DB_PORT=5433
+      - MB_DB_USER=metabase
+      - MB_DB_PASS=metabase
+      - MB_DB_HOST=postgresqlmetabase
+      - JAVA_TIMEZONE=Europe/Paris
+    depends_on:
+      - postgres_metabase
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./metabase_data:/metabase_data
+
+
