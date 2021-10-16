@@ -15,7 +15,7 @@ default_args = {
     'owner': 'airflow',
     'depends_on_past': False,
     'retries': 3,
-    'concurrency': 1,
+    'concurrency': 2,
     'start_date':datetime(2021, 10, 10, tzinfo=local_tz)
 }
 
