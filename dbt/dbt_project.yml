@@ -54,4 +54,4 @@ snapshots:
     tickers_snapshot:
       strategy: check
       unique_key: ticker_id
-      check_cols: all
+      check_cols: ['description', 'index']
