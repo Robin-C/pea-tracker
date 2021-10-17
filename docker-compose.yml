@@ -21,13 +21,14 @@ services:
       - postgres_airflow
 
   postgres_airflow:
-    user: postgres
     image: postgres 
     environment:
         - POSTGRES_DB=airflow
         - POSTGRES_USER=airflow
         - POSTGRES_PASSWORD=airflow
     hostname: postgresqlairflow
+    volumes:
+      - ./postgre_data_airflow:/var/lib/postgresql/data:rw
 
   postgres_metabase:
     image: postgres 
@@ -36,6 +37,8 @@ services:
         - POSTGRES_USER=metabase
         - POSTGRES_PASSWORD=metabase
     hostname: postgresqlmetabase
+    volumes:
+      - ./postgre_data_metabase:/var/lib/postgresql/data:rw
     command: -p 5433
 
   metabase:
@@ -52,7 +55,3 @@ services:
       - postgres_metabase
     ports:
       - '3000:3000'
-    volumes:
-      - ./metabase_data:/metabase_data
-
-
