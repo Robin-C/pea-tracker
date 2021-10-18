@@ -2,3 +2,5 @@ env/
 logs/
 target/
 push
+postgre_data_airflow/
+postgre_data_metabase/

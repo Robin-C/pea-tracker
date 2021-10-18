@@ -10,3 +10,6 @@ models:
 
       - name: dw_fact_transactions
         description: This model ingests staging data from stg_sk_transactions model.
+
+      - name: dw_dim_dates
+        description: This model creates a date table.  
