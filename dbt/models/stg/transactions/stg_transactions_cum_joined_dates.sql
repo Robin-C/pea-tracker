@@ -7,6 +7,7 @@ with tickers as (
 date_list as (
    select date_id
    from {{ ref('stg_dates') }}
+   where date_id <= CURRENT_DATE()
 ),
 
 tickers_dates_crossjoin as (
@@ -25,4 +26,4 @@ from tickers_dates_crossjoin
 
 select *
 from final
-where cum_qty is not 
+where cum_qty is not null
