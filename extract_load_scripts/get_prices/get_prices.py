@@ -25,7 +25,7 @@ df_list = list()
 
 for ticker in ticker_array['ticker']:
 
-    data = yf.download(ticker, group_by="Ticker", period='3y')
+    data = yf.download(ticker, group_by="Ticker", period='1mo')
     data['ticker'] = ticker  # add this column because the dataframe doesn't contain a column with the ticker
     df_list.append(data)
     

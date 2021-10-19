@@ -1,5 +1,5 @@
 with source_data as (
-    select tickers as ticker_id, date_transaction, quantity, price, loaded_at
+    select tickers as ticker_id, cast(date_transaction as date) as date_transaction, quantity, price, loaded_at
     from {{ source('sources', 'transactions')}}
 
 ),

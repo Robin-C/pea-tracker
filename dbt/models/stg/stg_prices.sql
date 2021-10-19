@@ -1,5 +1,5 @@
 with source_data as (
-    select Date as date, ticker as ticker_id, adj_close, loaded_at, concat(date, ticker) as pk
+    select cast(Date as date) as date, ticker as ticker_id, adj_close, loaded_at, concat(cast(date as date), ticker) as pk
     from {{ source('sources', 'prices')}}
 
 ),

@@ -25,7 +25,7 @@ dag = DAG(
     dag_id=my_dag_id,
     default_args=default_args,
     catchup=False,
-    schedule_interval='*/30 * * * *' # every 30 minutes
+    schedule_interval='30 23 * * *' # at 11.30pm
 )
 
 

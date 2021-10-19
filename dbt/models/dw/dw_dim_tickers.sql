@@ -1,6 +1,6 @@
 with source_date as (
 	select *
-	from {{ ref('tickers_snapshot')}}
+	from {{ ref('stg_tickers_snapshot_clean')}}
 ),
 
 final as (
