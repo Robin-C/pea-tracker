@@ -6,7 +6,7 @@ import sys
 from datetime import datetime
 
 #read file
-df=pd.read_csv('/my_app/extract_load_scripts/get_transactions/input/transactions.csv', parse_dates=['date_transaction'])
+df=pd.read_csv('/my_app/extract_load_scripts/get_transactions/input/transactions.csv', parse_dates=['date_transaction'], dayfirst=True)
 
 # CSV to be filled manually: 
 #    tickers,date_transaction,quantity,price

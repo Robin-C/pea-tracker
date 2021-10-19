@@ -1,11 +1,11 @@
-with source_date as (
+with source_data as (
 	select *
-	from {{ ref('stg_sk_prices')}}
+	from {{ ref('stg_prices_joined_dates')}}
 ),
 
 final as (
 	select *
-	from source_date
+	from source_data
 )
 
 select *

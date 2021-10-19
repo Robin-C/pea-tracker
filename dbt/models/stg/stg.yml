@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: stg_prices
-    description: This model creates the pk (date + ticker) to run tests on
+    description: This model ingests raw source data and creates the pk (date + ticker) to run tests on
     columns:
       - name: pk
         description: Primary key
