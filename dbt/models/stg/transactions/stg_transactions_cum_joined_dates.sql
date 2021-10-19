@@ -25,4 +25,4 @@ from tickers_dates_crossjoin
 
 select *
 from final
-where cum_qty is not null
+where cum_qty is not 
