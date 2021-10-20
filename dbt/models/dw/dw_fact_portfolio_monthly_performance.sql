@@ -1,6 +1,6 @@
 with source_data as (
 	select *
-	from {{ ref('stg_transactions_daily_performance')}}
+	from {{ ref('stg_portfolio_monthly_performance')}}
 ),
 
 final as (
