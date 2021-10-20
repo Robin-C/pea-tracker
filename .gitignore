@@ -1,1 +1,3 @@
 *.log
+postgre_data_airflow/
+postgre_data_metabase/

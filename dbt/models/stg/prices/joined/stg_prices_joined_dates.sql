@@ -1,6 +1,6 @@
 with tickers as (
   select dbt_scd_id
-  from {{ ref('dw_dim_tickers')}}
+  from {{ ref('stg_tickers_snapshot_clean')}}
   group by 1
 ),
 
