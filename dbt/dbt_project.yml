@@ -47,7 +47,11 @@ models:
       dw_fact_prices:
         materialized: incremental
         unique_key: pk
-        on_schema_change: sync_all_columns    
+        on_schema_change: sync_all_columns
+      dw_fact_prices_monthly:
+        materialized: incremental
+        unique_key: pk
+        on_schema_change: sync_all_columns        
 snapshots:
   pea_tracker:
     target_schema: snapshots
