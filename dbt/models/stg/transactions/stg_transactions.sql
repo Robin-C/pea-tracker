@@ -1,7 +1,12 @@
 with source_data as (
-    select tickers as ticker_id, cast(date_transaction as date) as date_transaction, quantity, price, loaded_at
+    select tickers as ticker_id
+    , cast(date_transaction as date) as date_transaction
+    , sum(quantity) as quantity
+    , sum(price*quantity) / sum(quantity) as price
+    , loaded_at
+    , concat(tickers, cast(date_transaction as date)) as pk
     from {{ source('sources', 'transactions')}}
-
+    group by tickers, cast(date_transaction as date), loaded_at, concat(tickers, cast(date_transaction as date))
 ),
 
 final as (

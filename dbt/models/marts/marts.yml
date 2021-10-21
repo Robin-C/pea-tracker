@@ -12,4 +12,4 @@ models:
         description: This model serves the transactions fact table to end users. 
 
       - name: mart_dim_dates
-        description: This model serves the date dimension table to end users.  
+        description: This model serves the date dimension table to end users.

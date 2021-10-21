@@ -59,7 +59,7 @@ models:
       dw_fact_portfolio_monthly_performance:
         materialized: incremental
         unique_key: pk
-        on_schema_change: sync_all_columns                  
+        on_schema_change: sync_all_columns
 snapshots:
   pea_tracker:
     target_schema: snapshots

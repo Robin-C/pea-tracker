@@ -1,8 +1,92 @@
 version: 2
 
 models:
+ # PRICES # 
   - name: stg_prices
-    description: This model ingests raw source data and creates the pk (date + ticker) to run tests on
+    description: This model ingests raw source data with just some column renaming
+    columns:
+      - name: pk
+        description: Primary key
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_sk_prices
+    description: This model takes stg_prices and inserts the ticker surrogate key
+    columns:
+      - name: pk
+        description: Primary key
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_prices_joined_dates
+    description: This model takes stg_sk_prices and joins it with stg_dates so there is no empty dates (weekends, holidays, missing price data)
+    columns:
+      - name: pk
+        description: Primary key
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_prices_daily_performance
+    description: This model takes stg_prices_joined_dates and calculates the daily returns from the previous day's price
+    columns:
+      - name: pk
+        description: Primary key
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_prices_monthly_performance
+    description: This model takes stg_prices_daily_performance and calculates the monthly returns
+    columns:
+      - name: pk
+        description: Primary key
+        tests:
+          - unique
+          - not_null
+
+# TRANSACTIONS #
+ 
+  - name: stg_transactions
+    description: This model ingests raw source data with just some column renaming. It also aggregates the quantity bought of same tickers bought on the same day so that we can create a pk to run test against.
+    columns:
+      - name: pk
+        description: Primary key
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_sk_transactions
+    description: This model takes stg_transactions and inserts the ticker surrogate key
+    columns:
+      - name: pk
+        description: Primary key
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_transactions_cum_joined_dates
+    description: This model takes stg_sk_transactions and joins it with stg_dates so there is no empty dates. It also calculates cumulative quantity, cost and average cost.
+    columns:
+      - name: pk
+        description: Primary key
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_portfolio_daily_performance
+    description: This model takes stg_transactions_cum_joined_dates and joins it with stg_prices_daily_performance so it can link the transaction tickers to their performance after buying. We now talk of a portfolio instead of a bunch of transactions.
+    columns:
+      - name: pk
+        description: Primary key
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_portfolio_monthly_performance
+    description: This model takes stg_portfolio_daily_performance and runs calculations so we can calculate the monthly returns. We use the last price of the month (or the current date for the current month) and substract the monthly performance to calculate the value at the beginning of the month.
     columns:
       - name: pk
         description: Primary key
