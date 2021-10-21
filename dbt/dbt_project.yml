@@ -38,9 +38,23 @@ models:
     stg:
       schema: stg
       materialized: view
+# Had to add table materializations since it was causing a too many ressource error    
+      prices:
+        aggregated:
+          stg_prices_monthly_performance:
+          materialized: table
+          utils:
+            list_dates_to_link_to:
+            materialized: table
+      transactions:
+        aggregated:
+          stg_portfolio_monthly_performance:
+            materialized: table
+
     marts:
       schema: mart
       materialized: table
+    
     dw:
       schema: dw
       materialized: table
