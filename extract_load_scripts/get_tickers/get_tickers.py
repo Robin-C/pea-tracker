@@ -13,6 +13,9 @@ df=pd.read_csv('/my_app/extract_load_scripts/get_tickers/input/ticker_list.csv')
 # add loaded_at col
 df['loaded_at'] = datetime.now()
 
+# set is_benchmark as boolean
+df['is_benchmark'] = df['is_benchmark'].astype('bool')
+
 # instantiate connection to bigquery
 client = bigquery.Client()
 

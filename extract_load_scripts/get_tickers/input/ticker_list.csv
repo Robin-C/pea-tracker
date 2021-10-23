@@ -1,8 +1,17 @@
-Ticker,Description,Index
-CW8.PA,Amundi World,MSCI World
-PAEEM.PA,Amundi Pays Emergent,MSCI PA
-EESM.F,BNP Small Cap EU,MSCI EU SC
-RS2K.DE,Amundi Russel 2000,MSCI Russel 2K
-SPY,SP500,SP500
-CAC.PA,CAC40 TR,CAC40
-^GSPC, SP500 TR, SP500
+Ticker,Description,Index,is_benchmark,country
+CW8.PA,Amundi World,MSCI World,false
+PAEEM.PA,Amundi Pays Emergent,MSCI PA,false
+EESM.F,BNP Small Cap EU,MSCI EU SC,false
+RS2K.DE,Amundi Russel 2000,MSCI Russel 2K,false
+CAC.PA,CAC40 TR,CAC40,true,FR
+^SP500TR,SP500 TR,SP500,true,US
+DAX,DAX40 TR,DAX40,true,DE
+IAUS.L,MSCI Australia,MSCI Australia,true,AU
+4BRZ.DE,MSCI Brazil,MSCI Brazil,true,BR
+CCAU.L,MSCI Canada,MSCI Canada,true,CA
+XCS6.DE,MSCI China,MSCI China,true,CN
+NDIA.L,MSCI India,MSCI India,true,IN
+LCUJ.DE,MSCI Japan,MSCI Japan,true,JP
+XAIN.DE,MSCI Indonesia,MSCI Indonesia,true,ID
+D5BI.F,MSCI Mexico,MSCI Mexico,true,MX
+CSRU.AS,MSCI Russia,MSCI Russia,true,RU

@@ -2,6 +2,8 @@ with source_data as (
     select ticker_id
     , description
     , index
+    , is_benchmark
+    , country
     , loaded_at
     , dbt_scd_id
     , dbt_updated_at

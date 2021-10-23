@@ -42,7 +42,7 @@ services:
     command: -p 5433
 
   metabase:
-    image: metabase/metabase
+    image: metabase/metabase:latest
     environment:
       - MB_DB_TYPE=postgres
       - MB_DB_DBNAME=metabase
