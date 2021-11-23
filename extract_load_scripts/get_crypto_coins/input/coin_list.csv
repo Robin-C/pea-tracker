@@ -1,0 +1,6 @@
+coin,coinGecko_name,is_benchmark,is_farmed
+CVX,convex-finance,false,true
+CRV,curve-dao-token,false,true
+USDC,usd-coin,false,true
+ETH,ethereum,true,false
+BTC,bitcoin,true,false

@@ -58,11 +58,9 @@ dataset_ref = client.dataset('sources')
 table_ref = dataset_ref.table('prices')
 
 # delete prices table
-bqclient = bigquery.Client()
 query_str = """delete from sources.prices where true"""
 
 bqclient.query(query_str)
-
 
 # send it to bigquery
 client.load_table_from_dataframe(df, table_ref).result()
