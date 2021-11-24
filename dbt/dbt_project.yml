@@ -40,15 +40,17 @@ models:
       materialized: view
 # Had to add table materializations since it was causing a too many ressource error    
       prices:
-        aggregated:
-          stg_prices_monthly_performance:
-          materialized: table
-          utils:
-            list_dates_to_link_to:
+        stocks:
+          aggregated:
+            stg_prices_monthly_performance:
             materialized: table
+            utils:
+              list_dates_to_link_to:
+              materialized: table
       transactions:
-        aggregated:
-          stg_portfolio_monthly_performance:
+        stocks:
+          aggregated:
+            stg_portfolio_monthly_performance:
             materialized: table
 
     marts:
@@ -81,3 +83,7 @@ snapshots:
       strategy: check
       unique_key: ticker_id
       check_cols: ['description', 'index']
+    coins_snapshot:
+      strategy: check
+      unique_key: coin_id
+      check_cols: ['is_benchmark', 'is_farmed']      

@@ -1,14 +1,17 @@
 version: 2
 
 sources:
-  - name: sources #dataset aka schema
-    description: raw csv files
+  - name: sources # dataset aka schema
+    description: raw price data
 
-  
     tables:
       - name: prices
         description: list of prices per ticker per day
       - name: tickers
         description: list of tickers
       - name: transactions
-        description: list of buy/sell transactions  
+        description: list of buy/sell transactions
+      - name: prices_crypto
+        description: list of crypto prices per coin per day
+      - name: coins
+        description: list of crypto coins  

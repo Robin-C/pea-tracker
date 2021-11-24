@@ -25,22 +25,22 @@ class pmuSpider(scrapy.Spider):
         for coin in self.response:
           self.urls.append(
             { 'url': self.base_url + coin.get('coinGecko_name'),
-            'coin': coin.get('coinGecko_name')}
+            'coinGecko_name': coin.get('coinGecko_name')}
           )
         for url in self.urls:
-          yield scrapy.Request(url=url['url'], callback=self.parse, meta={'coin': url['coin']})
+          yield scrapy.Request(url=url['url'], callback=self.parse, meta={'coinGecko_name': url['coinGecko_name']})
 
     def parse(self, response):
       price = float(response.xpath('//html/body/div[4]/div[4]/div[1]/div/div[1]/div[4]/div/div[1]/span[1]/span/text()').get().replace('$', '').replace(',',''))
-      coin = response.meta['coin']
+      coinGecko_name = response.meta['coinGecko_name']
       date_of_the_day = datetime.today().strftime('%Y-%m-%d')
       loaded_at = datetime.now()
-      self.rows.append([date_of_the_day, coin, price, loaded_at])
+      self.rows.append([date_of_the_day, coinGecko_name, price, loaded_at])
 
     def closed(self, reason):
       if reason == 'finished':
         dataset_ref = self.bqclient.dataset('sources')
         table_ref = dataset_ref.table('prices_crypto')
-        df = pd.DataFrame(self.rows, columns =['date', 'coin', 'price', 'loaded_at'])
+        df = pd.DataFrame(self.rows, columns =['date', 'coinGecko_name', 'price', 'loaded_at'])
         df['date'] = pd.to_datetime(df["date"]).dt.date  # Transform col to date type
         self.bqclient.load_table_from_dataframe(df, table_ref).result()  # Send it to BQ
