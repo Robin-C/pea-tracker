@@ -2,7 +2,6 @@ with source_data as (
     select coin_id
     , coinGecko_name
     , is_benchmark
-    , is_farmed
     , loaded_at
     , dbt_scd_id
     , dbt_updated_at
