@@ -1,3 +1,5 @@
+/* We aggregate because we can sometimes have several transactions for the same coin on the same day */
+
 with source_data as (
     select tickers as ticker_id
     , cast(date_transaction as date) as date_transaction
