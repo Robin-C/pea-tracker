@@ -11,6 +11,8 @@ sources:
         description: list of tickers
       - name: transactions
         description: list of buy/sell transactions
+      - name: crypto_transactions
+        description: list of buy/sell crypto transactions  
       - name: prices_crypto
         description: list of crypto prices per coin per day
       - name: coins

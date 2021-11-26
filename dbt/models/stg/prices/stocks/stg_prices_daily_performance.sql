@@ -1,5 +1,3 @@
-
-
 with source as (
     select prices.pk, prices.date, prices.ticker_sk
     , prices.adj_close
@@ -17,8 +15,3 @@ final as (
 
 select *
 from final
-
-
-
-
-

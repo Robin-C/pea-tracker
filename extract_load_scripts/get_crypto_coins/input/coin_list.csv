@@ -1,6 +1,9 @@
-coin,coinGecko_name,is_benchmark,is_farmed
-CVX,convex-finance,false,true
-CRV,curve-dao-token,false,true
-USDC,usd-coin,false,true
-ETH,ethereum,true,false
-BTC,bitcoin,true,false
+coin,coinGecko_name,is_benchmark
+CVX,convex-finance,false
+CRV,curve-dao-token,false
+USDC,usd-coin,false
+ETH,ethereum,true
+BTC,bitcoin,true
+DeHub,dehub,false
+CVXCRV,convex-crv,false
+SPELL,spell-token,false

@@ -76,6 +76,15 @@ models:
         materialized: incremental
         unique_key: pk
         on_schema_change: sync_all_columns
+      dw_fact_crypto_prices:
+        materialized: incremental
+        unique_key: pk
+        on_schema_change: sync_all_columns
+      dw_fact_crypto_prices_monthly:
+        materialized: incremental
+        unique_key: pk
+        on_schema_change: sync_all_columns
+
 snapshots:
   pea_tracker:
     target_schema: snapshots
@@ -86,4 +95,4 @@ snapshots:
     coins_snapshot:
       strategy: check
       unique_key: coin_id
-      check_cols: ['is_benchmark', 'is_farmed']      
+      check_cols: ['is_benchmark']

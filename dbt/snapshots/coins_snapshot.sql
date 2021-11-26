@@ -2,7 +2,7 @@
 
 
 with source_data as (
-    select coin as coin_id, coinGecko_name, is_benchmark, is_farmed, loaded_at
+    select coin as coin_id, coinGecko_name, is_benchmark, loaded_at
     from {{ source('sources', 'coins')}}
 
 ),

@@ -47,6 +47,42 @@ models:
           - unique
           - not_null
 
+  - name: stg_crypto_prices
+    description: This model ingests raw source data with just some column renaming
+    columns:
+      - name: pk
+        description: Primary key
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_sk_crypto_prices
+    description: This model takes stg_crypto_prices and inserts the coin surrogate key
+    columns:
+      - name: pk
+        description: Primary key
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_crypto_daily_performance
+    description: This model takes stg_sk_crypto_prices and calculates the daily returns from the previous day's price
+    columns:
+      - name: pk
+        description: Primary key
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_crypto_prices_monthly_performance
+    description: This model takes stg_stg_crypto_daily_performance and calculates the monthly returns
+    columns:
+      - name: pk
+        description: Primary key
+        tests:
+          - unique
+          - not_null
+
 # TRANSACTIONS #
  
   - name: stg_transactions
@@ -93,3 +129,6 @@ models:
         tests:
           - unique
           - not_null
+
+
+# DIMENSIONS #

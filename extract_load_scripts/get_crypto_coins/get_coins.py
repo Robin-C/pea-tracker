@@ -13,9 +13,8 @@ df=pd.read_csv('/my_app/extract_load_scripts/get_crypto_coins/input/coin_list.cs
 # add loaded_at col
 df['loaded_at'] = datetime.now()
 
-# set is_benchmark and is_farmed as booleans
+# set is_benchmark as boolean
 df['is_benchmark'] = df['is_benchmark'].astype('bool')
-df['is_benchmark'] = df['is_farmed'].astype('bool')
 
 # instantiate connection to bigquery
 client = bigquery.Client()

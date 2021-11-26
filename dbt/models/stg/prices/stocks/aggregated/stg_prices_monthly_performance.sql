@@ -1,9 +1,9 @@
 
 with monthly_performances as (
     select year_month, ticker_sk, sum(daily_performance) as monthly_performance
-    from pea-tracker.dev_stg.stg_prices_daily_performance
-    inner join `pea-tracker.dev_stg.stg_dates` on date_id = date
-    group by 1,2 
+    from {{ ref('stg_prices_daily_performance') }}
+    inner join {{ ref('stg_dates') }} on date_id = date
+    group by 1,2
 ),
 
 price_on_last_day_current__month as (
@@ -29,5 +29,3 @@ final as (
 
 select *
 from final
-
-
