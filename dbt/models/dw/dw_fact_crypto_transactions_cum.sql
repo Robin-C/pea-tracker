@@ -1,6 +1,6 @@
 with source_data as (
 	select *
-	from {{ ref('stg_sk_transactions')}}
+	from {{ ref('stg_crypto_transactions_cum_joined_dates')}}
 ),
 
 final as (
