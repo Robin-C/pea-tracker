@@ -39,6 +39,7 @@ class pmuSpider(scrapy.Spider):
 
     def closed(self, reason):
       if reason == 'finished':
+        self.bqclient.query("""delete from sources.prices_crypto where true""" ) # Delete table
         dataset_ref = self.bqclient.dataset('sources')
         table_ref = dataset_ref.table('prices_crypto')
         df = pd.DataFrame(self.rows, columns =['date', 'coinGecko_name', 'price', 'loaded_at'])
