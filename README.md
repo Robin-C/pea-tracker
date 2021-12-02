@@ -3,7 +3,7 @@
 
 There is plenty of portfolio app/websites around but few of them allow you to benchmark your portfolio performance versus a custom index.
 
-<h2>What technology were used to make this project?</h2>
+<h2>What technologies were used to make this project?</h2>
 
 <h3>Extract and load</h3> 
 
