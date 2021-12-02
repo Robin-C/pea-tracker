@@ -15,7 +15,7 @@ DBT and SQL to transform the data directly inside of Big Query (the T of ELT)
 <h3>Dataviz</h3>
 Metabase and SQL for the data vizualition part.
 
-Each component was isolated inside of a docker container and booted up with Docker-compose.
+Each component was isolated inside of a docker container and booted up with Docker-compose. Everything is hosted on a cheap VPS.
 
 <h3>General diagram</h3>
 
