@@ -17,14 +17,14 @@ Metabase and SQL for the data vizualition part.
 
 Each component was isolated inside of a docker container and booted up with Docker-compose.
 
-General diagram:
+<h3>General diagram</h3>
 
 ![Components diagram](./readme_pics/diagram.jpg "Title")
 
-Airflow DAG:
+<h3>Airflow DAG</h3>
 
 ![Airflow dag](./readme_pics/airflow.png "Title")
 
-Metabase dashboard:
+<h3>Metabase dashboard</h3>
 
 ![Metabase dashboard](./readme_pics/metabase.png "Title")
