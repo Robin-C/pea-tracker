@@ -29,4 +29,4 @@ Each component was isolated inside of a docker container and booted up with Dock
 
 <h3>Metabase dashboard</h3>
 
-![Metabase dashboard](https://imgur.com/6LX4H9c.png)
+![Metabase dashboard](https://i.imgur.com/70M5ofx.png)
