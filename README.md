@@ -1,7 +1,9 @@
 <h1>PEA Tracker</h1>
 <h2>What does this project do?</h2>
 
-There is plenty of portfolio app/websites around but few of them allow you to benchmark your portfolio performance versus a custom index.
+This app allows you to track your portfolio performance as well as benchmark it versus a custom index.
+
+PEA, french for Plan Epargne Action, is a special broker account in France with tax advantages.
 
 <h2>What technologies were used to make this project?</h2>
 
