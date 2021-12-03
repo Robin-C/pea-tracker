@@ -21,6 +21,7 @@ Metabase and SQL for the data vizualition part.
 
 <h3>General diagram</h3>
 Each component was isolated inside of a docker container and booted up with Docker-compose. Everything is hosted on a cheap VPS.
+
 ![Components diagram](https://imgur.com/LEz81NJ.jpg)
 
 <h3>Airflow DAG</h3>
