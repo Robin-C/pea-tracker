@@ -21,12 +21,12 @@ Each component was isolated inside of a docker container and booted up with Dock
 
 <h3>General diagram</h3>
 
-![Components diagram]([Imgur](https://imgur.com/LEz81NJ.jpg) "general")
+![Components diagram]([Imgur](https://imgur.com/LEz81NJ.jpg)
 
 <h3>Airflow DAG</h3>
 
-![Airflow dag]([Imgur](https://imgur.com/offfk5l.png) "airflow")
+![Airflow dag]([Imgur](https://imgur.com/offfk5l.png) 
 
 <h3>Metabase dashboard</h3>
 
-![Metabase dashboard]([Imgur](https://imgur.com/6LX4H9c.png) "metabase")
+![Metabase dashboard]([Imgur](https://imgur.com/6LX4H9c.png)
