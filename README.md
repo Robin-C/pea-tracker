@@ -12,13 +12,13 @@ PEA, french for Plan Epargne Action, is a special broker account in France with 
 Custom python scripts using yahoo finance API / scrapy (web crawling) loading data to Big Query.
 
 <h3>Transform</h3>
-DBT and SQL to transform the data directly inside of Big Query (the T of ELT)
+DBT and SQL to transform the data directly inside of Big Query (the T of ELT).
 
 <h3>Dataviz</h3>
 Metabase and SQL for the data vizualition part.
 
 <h3>Orchestration</h3>
-Airflow and python to run the data pipeline on a daily schedule
+Airflow and python to run the data pipeline on a daily schedule.
 
 <h3>General diagram</h3>
 Each component was isolated inside of a docker container and booted up with Docker-compose. Everything is hosted on a cheap VPS.
